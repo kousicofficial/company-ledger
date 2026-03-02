@@ -9,7 +9,7 @@ import axios from 'axios';
  *  - Future auth headers (e.g. Bearer tokens) can be injected here
  */
 const api = axios.create({
-  baseURL: 'http://localhost:5001/api',
+  baseURL: "https://company-ledger-backend-1.onrender.com/api",
   headers: { 'Content-Type': 'application/json' },
   timeout: 12000,        // 12-second timeout for slow connections
 });

@@ -260,6 +260,10 @@ h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; }
 .auto-item:hover { background: var(--surface-alt); }
 .auto-item + .auto-item { border-top: 1px solid var(--border); }
 .auto-name { font-weight: 600; font-size: .9rem; }
+.auto-item.no-result { cursor: default; color: var(--txt-3); font-style: italic; }
+.auto-item.no-result:hover { background: none; }
+.auto-item.no-result strong { color: var(--txt-2); font-style: normal; }
+
 
 /* Filter pill-tabs */
 .filter-tabs {

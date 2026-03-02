@@ -348,9 +348,9 @@ export default function App() {
             {searchQuery && (<button className="clear-btn" onClick={() => onSearch('')}>✕</button>)}
           </div>
           <button className="search-submit-btn" onClick={doSearchFn}>Search</button>
-          {showDrop && suggestions.length > 0 && (
+          {showDrop && searchQuery && (
             <div className="autocomplete-drop">
-              {suggestions.map(c => {
+              {suggestions.length > 0 ? suggestions.map(c => {
                 const s = getStatus(c.totalAmount, c.settledAmount, c.dueDate);
                 return (
                   <div key={c._id} className="auto-item" onClick={() => pickSuggestion(c)}>
@@ -358,7 +358,11 @@ export default function App() {
                     <span className={`chip chip-${s.cls}`}>{s.label}</span>
                   </div>
                 );
-              })}
+              }) : (
+                <div className="auto-item no-result">
+                  <span className="auto-name">No company found for "<strong>{searchQuery}</strong>"</span>
+                </div>
+              )}
             </div>
           )}
         </div>
